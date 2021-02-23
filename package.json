@@ -1,0 +1,56 @@
+{
+  "name": "voicemeeter",
+  "description": "VoiceMeeter API adapter",
+  "keywords": [
+    "VoiceMeeter",
+    "audio",
+    "API",
+    "typescript"
+  ],
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "vaaski <admin@vaa.ski>",
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "dev": "nodemon",
+    "test": "nyc ava",
+    "coverage": "live-server coverage/lcov-report",
+    "commit": "cz -S"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "files": [
+      "tests/**/*"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "failFast": true
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "ava": "^3.15.0",
+    "commitizen": "^4.2.2",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-ava": "^11.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  }
+}
